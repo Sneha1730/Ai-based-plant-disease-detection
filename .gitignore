@@ -1,0 +1,23 @@
+# Ignore virtual environments
+venv311/
+.env/
+
+# Ignore Jupyter checkpoints and Python cache
+__pycache__/
+.ipynb_checkpoints/
+
+# Ignore temporary and log files
+*.log
+*.tmp
+
+# Ignore trained models (use Git LFS)
+*.h5
+*.keras
+*.pth
+*.pkl
+
+# Ignore uploads or user files
+uploads/
+
+# Ignore dataset folder
+dataset/
