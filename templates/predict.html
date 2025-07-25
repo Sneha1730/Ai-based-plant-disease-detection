@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Disease Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>🌱 PlantCare AI</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><button id="themeToggle">🌗 Toggle Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Detect Plant Diseases from Images</h1>
+            <p>Upload a plant leaf image to identify potential diseases and get solutions using AI.</p>
+        </section>
+
+        <section class="form-section">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <input type="file" name="image" accept="image/*" required>
+                <br>
+                <button type="submit">Predict Disease</button>
+            </form>
+
+            {% if prediction %}
+            <div class="result">
+                <h2>Prediction: {{ prediction }}</h2>
+                <img src="{{ image }}" alt="Uploaded Image">
+            </div>
+            {% endif %}
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Crop Disease Detector | Powered by AI & Flask</p>
+    </footer>
+</body>
+</html> 

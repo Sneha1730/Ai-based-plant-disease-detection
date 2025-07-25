@@ -1,0 +1,274 @@
+/* ======================
+   Base Reset
+====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ======================
+   Root Variables
+====================== */
+:root {
+    --background-light: #ffffff;
+    --background-dark: #1c1c1c;
+    --text-light: #000000;
+    --text-dark: #ffffff;
+    --primary-color: #4CAF50;
+    --secondary-color: #ff5722;
+    --transition-duration: 0.3s;
+}
+
+/* ======================
+   Body & Theme
+====================== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    line-height: 1.6;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+body.light-theme {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+body.dark-theme,
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* ======================
+   Header & Navigation
+====================== */
+header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav a,
+nav button {
+    text-decoration: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ======================
+   Hero Section
+====================== */
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background: #e8f5e9;
+}
+
+body.dark-theme .hero,
+body.dark-mode .hero {
+    background: #1a1a1a;
+}
+
+/* Optional image background for hero (predict.html style) */
+.hero.image-background {
+    background: url('path_to_your_image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-light);
+}
+
+.hero .content {
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ======================
+   Grid Info (Cards)
+====================== */
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.plant-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+}
+
+.plant-card img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Dark Mode Cards */
+body.dark-mode .plant-card,
+body.dark-theme .plant-card {
+    background: #2a2a2a;
+    color: #f0f0f0;
+}
+
+/* ======================
+   Chatbot Section
+====================== */
+.chatbot-section {
+    padding: 2rem;
+    background: #f1f8e9;
+    text-align: center;
+}
+
+.chat-container {
+    max-width: 500px;
+    margin: 1rem auto;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#chatBox {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    background: #fefefe;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#userInput {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ======================
+   Form Section (Predict)
+====================== */
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+}
+
+button,
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color var(--transition-duration);
+}
+
+button:hover,
+button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ======================
+   Footer
+====================== */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    margin-top: 2rem;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-theme header,
+body.dark-theme footer {
+    background: #1e1e1e;
+}
+
+body.dark-mode nav a,
+body.dark-mode nav button,
+body.dark-theme nav a,
+body.dark-theme nav button {
+    color: #f0f0f0;
+}
+
+body.dark-mode .chatbot-section,
+body.dark-theme .chatbot-section {
+    background: #1f1f1f;
+}
+
+body.dark-mode .chat-container,
+body.dark-theme .chat-container {
+    background: #2a2a2a;
+}
+
+body.dark-mode #chatBox,
+body.dark-theme #chatBox {
+    background: #1a1a1a;
+    color: #f0f0f0;
+}
+
+body.dark-mode input,
+body.dark-mode button,
+body.dark-theme input,
+body.dark-theme button {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+.result {
+    text-align: center;
+}

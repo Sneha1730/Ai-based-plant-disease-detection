@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h2>🌱 PlantCare AI</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/predict">Prediction</a></li>
+                <li><button id="themeToggle">🌗 Toggle Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>AI-Powered Plant Disease Detector</h1>
+            <p>Empowering farmers and gardeners to protect crops and improve yield with instant disease recognition.</p>
+        </section>
+
+        <section class="grid-info">
+            <div class="plant-card">
+                <img src="{{ url_for('static', filename='apple.jpg') }}" alt="Apple">
+                <h3>Apple</h3>
+                <p>Apple trees need regular watering, especially during dry spells, and well-draining soil to avoid root rot. They also need to be pruned regularly, especially to remove dead or broken branches, and mulched to retain moisture. Proper support, companion planting (with appropriate cultivars), and pest control are also important for healthy apple trees. </p>
+            </div>
+            <div class="plant-card">
+                <img src="{{ url_for('static', filename='potato.jpg') }}" alt="Potato">
+                <h3>Potato</h3>
+                <p>Potatoes need full sun and well-drained soil. They also prefer soil with a pH of 5.5 to 6.5 (slightly acidic). If you're growing potatoes in containers, ensure the pots are at least 12 inches deep.</p>
+            </div>
+            <div class="plant-card">
+                <img src="{{ url_for('static', filename='grape.jpg') }}" alt="Grape">
+                <h3>Grape</h3>
+                <p>They need full sun (at least 7 hours daily), well-drained soil, and regular watering, especially during the first few years and during dry periods. Pruning is essential, especially in the first few years to encourage root development, and should be done in late winter. Protecting young vines from birds and controlling pests is also important. </p>
+            </div>
+            <!-- Add more plant cards as needed -->
+        </section>
+
+        <section class="chatbot-section">
+            <h2>💬 Need Help? Ask Our Plant Doctor!</h2>
+            <div class="chat-container" id="chatContainer">
+                <div id="chatBox">
+                    <img src="{{ url_for('static', filename='chatbot.png') }}" alt="Chatbot">
+                </div>
+                <input type="text" id="userInput" placeholder="Describe your plant issue..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PlantCare AI | Crop Disease Detection System</p>
+    </footer>
+</body>
+</html>
